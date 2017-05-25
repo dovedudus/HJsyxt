@@ -9,5 +9,6 @@ import java.io.Serializable;
 public class Base implements Serializable {
 
     public boolean ok;
+    //hel
 
 }
