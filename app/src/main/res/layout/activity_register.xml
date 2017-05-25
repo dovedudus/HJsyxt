@@ -11,50 +11,269 @@
     android:background="#FFFFFF"
     tools:context="com.bs.hjsyxt.ui.activity.RegisterActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#B1B3B5"/>
-
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100px"
-        android:layout_marginTop="30px">
-
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#B1B3B5"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100px"
-        android:orientation="horizontal" >
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_weight="3"
-            android:text="用户名"
-            android:textStyle="bold"
-            android:textSize="40px"
-            android:textColor="#A1B3B5"
-            android:layout_marginTop="30px"
-            android:layout_marginLeft="30px"/>
-
-        <TextView
-            android:layout_width="1px"
-            android:layout_height="match_parent"
+            android:layout_height="1px"
             android:background="#B1B3B5"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:hint="请输入您的用户名"/>
+            android:layout_height="100px"
+            android:layout_marginTop="30px">
+
+            <RadioGroup
+                android:id="@+id/rg_register"
+                android:contentDescription="usertype"
+                android:layout_width="match_parent"
+                android:layout_height="60px"
+                android:layout_marginTop="20px"
+                android:layout_marginLeft="50px"
+                android:layout_marginRight="50px"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbt_customer"
+                    android:checked="true"
+                    android:text="customer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <RadioButton
+                    android:id="@+id/rbt_dealer"
+                    android:text="dealer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#B1B3B5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="2.5"
+                android:text="用户名"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textColor="#A1B3B5"
+                android:layout_marginTop="15px"
+                android:layout_marginLeft="30px"/>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#B1B3B5"/>
+
+            <EditText
+                android:id="@+id/et_user"
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="1"
+                android:hint="请输入您的用户名"
+                android:textColorHint="#B1B3B5"
+                android:textSize="35px"
+                android:layout_marginTop="20px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#B1B3B5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="2.5"
+                android:text="联系方式"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textColor="#A1B3B5"
+                android:layout_marginTop="15px"
+                android:layout_marginLeft="30px"/>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#B1B3B5"/>
+
+
+            <EditText
+                android:id="@+id/et_tel"
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="1"
+                android:hint="请输入您的联系方式"
+                android:textColorHint="#B1B3B5"
+                android:textSize="35px"
+                android:layout_marginTop="20px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#B1B3B5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="2.5"
+                android:text="通讯地址"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textColor="#A1B3B5"
+                android:layout_marginTop="15px"
+                android:layout_marginLeft="30px"/>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#B1B3B5"/>
+
+            <EditText
+                android:id="@+id/et_address"
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="1"
+                android:hint="请输入您的通讯地址"
+                android:textColorHint="#B1B3B5"
+                android:textSize="35px"
+                android:layout_marginTop="20px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#B1B3B5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="2.5"
+                android:text="密码"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textColor="#A1B3B5"
+                android:layout_marginTop="15px"
+                android:layout_marginLeft="30px"/>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#B1B3B5"/>
+
+            <EditText
+                android:id="@+id/et_inputpsw"
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="1"
+                android:hint="请输入您的密码"
+                android:inputType="textPassword"
+                android:textColorHint="#B1B3B5"
+                android:textSize="35px"
+                android:layout_marginTop="20px"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#B1B3B5"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="2.5"
+                android:text="确认密码"
+                android:textStyle="bold"
+                android:textSize="35px"
+                android:textColor="#A1B3B5"
+                android:layout_marginTop="30px"
+                android:layout_marginLeft="15px"/>
+
+            <TextView
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="#B1B3B5"/>
+
+            <EditText
+                android:id="@+id/et_reinputpsw"
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:layout_weight="1"
+                android:hint="请确认您的密码"
+                android:inputType="textPassword"
+                android:textColorHint="#B1B3B5"
+                android:textSize="35px"
+                android:layout_marginTop="20px"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#B1B3B5"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100px"
+            android:layout_marginTop="50px">
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="70px"
+                android:background="#D4E1E5"
+                android:layout_marginLeft="70px"
+                android:layout_marginRight="70px"
+                android:text="注册"
+                android:textSize="50px"
+                android:textColor="#A1B3B5"
+                android:gravity="center"/>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
 

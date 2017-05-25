@@ -39,7 +39,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="70px"
-                android:text="买的放心 吃的安心"
+                android:text=" 买的放心 吃的安心"
                 android:textSize="47px"
                 android:textColor="#C77022"/>
 
