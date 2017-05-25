@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D3D3D3"
+    tools:context="com.bs.hjsyxt.ui.activity.MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/mainbg"
+            android:layout_marginBottom="240px">
+
+            <Button
+                android:id="@+id/btn_scan"
+                android:layout_width="300px"
+                android:layout_height="300px"
+                android:background="@drawable/scanbutton"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="240px"
+            android:gravity="bottom"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF5EE"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_company"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/companiesbtn"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btn_notice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/noticebtn"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btn_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/feedbtn"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

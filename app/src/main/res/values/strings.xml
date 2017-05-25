@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">黄酒溯源系统</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_start">StartActivity</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
+    <string name="title_activity_register">RegisterActivity</string>
+</resources>
