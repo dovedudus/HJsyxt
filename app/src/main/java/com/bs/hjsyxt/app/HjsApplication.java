@@ -17,7 +17,8 @@ public class HjsApplication extends Application {
 
     private static HjsApplication sInstance;
     private AppComponent appComponent;
-
+    //0消费者 1 经销商
+    public int userType=0;
     @Override
     public void onCreate() {
         super.onCreate();

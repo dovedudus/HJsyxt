@@ -190,8 +190,6 @@
                 android:textSize="35px"
                 android:layout_marginTop="20px"
                 android:entries="@array/spn_usertype">
-
-
             </Spinner>
 
             <TextView

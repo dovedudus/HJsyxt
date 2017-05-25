@@ -6,6 +6,7 @@ import android.content.Context;
 import com.bs.hjsyxt.api.HttpApi;
 import com.bs.hjsyxt.module.AppModule;
 import com.bs.hjsyxt.module.HttpApiModule;
+import com.bs.hjsyxt.ui.activity.LoginActivity;
 
 import dagger.Component;
 
@@ -18,7 +19,6 @@ public interface AppComponent {
 
         //Application Context
         Context getContext();
-
         //Network Api
         HttpApi getHttpApi();
 }

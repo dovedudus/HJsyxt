@@ -1,7 +1,7 @@
 package com.bs.hjsyxt.api;
 
 
-import com.bs.hjsyxt.bean.Recommend;
+import com.bs.hjsyxt.bean.User;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;
@@ -13,6 +13,22 @@ import rx.Observable;
 
 public interface HttpApiService {
 
-    @GET("/book/recommend")
-    Observable<Recommend> getRecomend(@Query("gender") String gender);
+    /**
+     * 消费者登陆
+     * @param username
+     * @param password
+     * @return
+     */
+    @GET("/boolshop/index.php/Home/User/login_c")
+    Observable<User> loginCUser(@Query("name") String username, @Query("psw") String password);
+
+    /**
+     * 经销商登陆
+     * @param username
+     * @param password
+     * @return
+     */
+    @GET("/boolshop/index.php/Home/User/login_i")
+    Observable<User> loginIUser(@Query("name") String username, @Query("psw") String password);
+
 }

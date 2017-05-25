@@ -2,7 +2,7 @@ package com.bs.hjsyxt.api;
 
 
 import com.bs.hjsyxt.base.Constant;
-import com.bs.hjsyxt.bean.Recommend;
+import com.bs.hjsyxt.bean.User;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -36,7 +36,11 @@ public class HttpApi {
         return instance == null ? new HttpApi(okHttpClient) : instance;
     }
 
-    public Observable<Recommend> getRecommend(String gender) {
-        return service.getRecomend(gender);
+    public Observable<User> loginCUser(String username, String password) {
+        return service.loginCUser(username, password);
+    }
+
+    public Observable<User> loginIUser(String username, String password) {
+        return service.loginIUser(username, password);
     }
 }
