@@ -12,30 +12,89 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.bs.hjsyxt.R;
+import com.bs.hjsyxt.app.HjsApplication;
+import com.bs.hjsyxt.bean.ProductInfo;
+import com.bs.hjsyxt.bean.Supply;
+import com.bs.hjsyxt.component.DaggerAllComponent;
+import com.bs.hjsyxt.ui.adapter.SupplyAdapter;
+import com.bs.hjsyxt.ui.contract.ProductDetailContract;
+import com.bs.hjsyxt.ui.presenter.ProductDetailPresenter;
 
-public class ProductDetailActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private TextView tv_name;
-    private TextView tv_company;
-    private TextView tv_proarea;
-    private TextView tv_manudata;
-    private TextView tv_usedata;
-    private ListView lv_jingxiao;
+import javax.inject.Inject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
+public class ProductDetailActivity extends AppCompatActivity implements ProductDetailContract.View{
+
+    @BindView(R.id.tv_name)
+    public TextView tv_name;
+    @BindView(R.id.tv_company)
+    public TextView tv_company;
+    @BindView(R.id.tv_proarea)
+    public TextView tv_proarea;
+    @BindView(R.id.tv_manudata)
+    public TextView tv_manudata;
+    @BindView(R.id.tv_usedata)
+    public TextView tv_usedata;
+
+    @BindView(R.id.lv_jingxiao)
+    public ListView lv_jingxiao;
+
+    public SupplyAdapter adapter;
+    @Inject
+    ProductDetailPresenter productDetailPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
+        ButterKnife.bind(this);
+        setComponent();
 
+        adapter = new SupplyAdapter(new ArrayList<Supply>(), this);
+        lv_jingxiao.setAdapter(adapter);
 
         //接受扫描二维码获得的信息
         Bundle bundle = this.getIntent().getExtras();
         //接收result值
-        String name = bundle.getString("result");
+        String id = bundle.getString("result");
 
+        productDetailPresenter.attachView(this);
+        productDetailPresenter.getProductDetail(id);
 
     }
 
+    public void setComponent() {
+        DaggerAllComponent.builder()
+                .appComponent(HjsApplication.getsInstance().getAppComponent())
+                .build()
+                .inject(this);
+    }
+
+    @Override
+    public void showProductDetail(ProductInfo data) {
+        //显示详细产品
+        tv_name.setText(data.product.name);
+        tv_company.setText(data.shengchan.name);
+        tv_proarea.setText(data.product.check_info);
+        tv_manudata.setText(data.product.manu_date);
+        tv_usedata.setText(data.product.use_date);
+        adapter.setData(data.jinxiao);
+        adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void showError() {
+
+    }
+
+    @Override
+    public void complete() {
+
+    }
 }

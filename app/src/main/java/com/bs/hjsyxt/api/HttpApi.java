@@ -2,13 +2,14 @@ package com.bs.hjsyxt.api;
 
 
 import com.bs.hjsyxt.base.Constant;
+import com.bs.hjsyxt.bean.Product;
+import com.bs.hjsyxt.bean.ProductInfo;
 import com.bs.hjsyxt.bean.User;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Query;
 import rx.Observable;
 
 /**
@@ -42,5 +43,9 @@ public class HttpApi {
 
     public Observable<User> loginIUser(String username, String password) {
         return service.loginIUser(username, password);
+    }
+
+    public Observable<ProductInfo> getProductDetail(String id) {
+        return service.getProductDetail(id);
     }
 }

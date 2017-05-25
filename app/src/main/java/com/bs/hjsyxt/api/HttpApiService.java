@@ -1,6 +1,8 @@
 package com.bs.hjsyxt.api;
 
 
+import com.bs.hjsyxt.bean.Product;
+import com.bs.hjsyxt.bean.ProductInfo;
 import com.bs.hjsyxt.bean.User;
 
 import retrofit2.http.GET;
@@ -30,5 +32,9 @@ public interface HttpApiService {
      */
     @GET("/boolshop/index.php/Home/User/login_i")
     Observable<User> loginIUser(@Query("name") String username, @Query("psw") String password);
+
+
+    @GET("/boolshop/index.php/Home/Product/getProducturl")
+    Observable<ProductInfo> getProductDetail(@Query("id") String id);
 
 }

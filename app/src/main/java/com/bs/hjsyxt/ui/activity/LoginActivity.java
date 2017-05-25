@@ -9,12 +9,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.bs.hjsyxt.R;
 import com.bs.hjsyxt.app.HjsApplication;
 import com.bs.hjsyxt.component.DaggerAllComponent;
-import com.bs.hjsyxt.component.DaggerAppComponent;
 import com.bs.hjsyxt.ui.contract.LoginContract;
 import com.bs.hjsyxt.ui.presenter.LoginPresenter;
 import com.bs.hjsyxt.utils.ToastUtils;

@@ -1,6 +1,7 @@
 package com.bs.hjsyxt.component;
 
 import com.bs.hjsyxt.ui.activity.LoginActivity;
+import com.bs.hjsyxt.ui.activity.ProductDetailActivity;
 
 import dagger.Component;
 
@@ -13,4 +14,5 @@ public interface AllComponent {
 
     //登录界面
     LoginActivity inject(LoginActivity activity);
+    ProductDetailActivity inject(ProductDetailActivity activity);
 }
