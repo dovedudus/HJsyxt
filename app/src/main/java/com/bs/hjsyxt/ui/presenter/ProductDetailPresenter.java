@@ -69,7 +69,7 @@ public class ProductDetailPresenter extends RxPresenter<ProductDetailContract.Vi
 
                     @Override
                     public void onCompleted() {
-
+                        //success put
                     }
 
                     @Override
