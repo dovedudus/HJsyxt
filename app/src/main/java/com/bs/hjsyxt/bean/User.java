@@ -8,4 +8,9 @@ public class User  extends  Base{
 
     public String name;
     public String psw;
+    public Data data;
+
+    public class Data{
+        public String id;
+    }
 }

@@ -3,6 +3,8 @@ package com.bs.hjsyxt.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -22,7 +24,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class LoginActivity extends Activity implements LoginContract.View{
+public class LoginActivity extends AppCompatActivity implements LoginContract.View{
 
     private Button bt_login;
 
@@ -42,7 +44,7 @@ public class LoginActivity extends Activity implements LoginContract.View{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        
         ButterKnife.bind(this);
         setComponent();
 

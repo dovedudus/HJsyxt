@@ -30,11 +30,15 @@ public interface HttpApiService {
      * @param password
      * @return
      */
-    @GET("/boolshop/index.php/Home/User/login_i")
+    @GET("/boolshop/index.php/Home/User/login_j")
     Observable<User> loginIUser(@Query("name") String username, @Query("psw") String password);
 
 
     @GET("/boolshop/index.php/Home/Product/getProducturl")
     Observable<ProductInfo> getProductDetail(@Query("id") String id);
+
+    @GET("boolshop/index.php/Home/Product/insertChain")
+    Observable<ProductInfo> putSupplyChain(@Query("pro_id") String id,@Query("chain") String chain);
+
 
 }

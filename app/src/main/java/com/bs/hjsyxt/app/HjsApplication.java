@@ -19,6 +19,7 @@ public class HjsApplication extends Application {
     private AppComponent appComponent;
     //0消费者 1 经销商
     public int userType=0;
+    public String userid;
     @Override
     public void onCreate() {
         super.onCreate();

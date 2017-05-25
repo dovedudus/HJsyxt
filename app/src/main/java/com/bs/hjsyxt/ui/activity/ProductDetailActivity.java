@@ -27,6 +27,7 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class ProductDetailActivity extends AppCompatActivity implements ProductDetailContract.View{
 
@@ -41,10 +42,15 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
     @BindView(R.id.tv_usedata)
     public TextView tv_usedata;
 
+    @BindView(R.id.tv_update)
+    public TextView btnUpdate;
+
     @BindView(R.id.lv_jingxiao)
     public ListView lv_jingxiao;
 
     public SupplyAdapter adapter;
+
+    ProductInfo data;
     @Inject
     ProductDetailPresenter productDetailPresenter;
 
@@ -78,6 +84,7 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
 
     @Override
     public void showProductDetail(ProductInfo data) {
+        this.data = data;
         //显示详细产品
         tv_name.setText(data.product.name);
         tv_company.setText(data.shengchan.name);
@@ -86,7 +93,17 @@ public class ProductDetailActivity extends AppCompatActivity implements ProductD
         tv_usedata.setText(data.product.use_date);
         adapter.setData(data.jinxiao);
         adapter.notifyDataSetChanged();
+
+        if(HjsApplication.getsInstance().userType == 1) {
+            btnUpdate.setVisibility(View.VISIBLE);
+        }
     }
+
+    @OnClick(R.id.tv_update)
+    public void onClickUpDate(){
+        productDetailPresenter.putSupplychain(data.product.id);
+    }
+
 
     @Override
     public void showError() {

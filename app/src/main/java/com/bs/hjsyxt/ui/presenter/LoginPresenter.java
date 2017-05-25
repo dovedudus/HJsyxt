@@ -3,6 +3,7 @@ package com.bs.hjsyxt.ui.presenter;
 import android.util.Log;
 
 import com.bs.hjsyxt.api.HttpApi;
+import com.bs.hjsyxt.app.HjsApplication;
 import com.bs.hjsyxt.base.RxPresenter;
 import com.bs.hjsyxt.bean.User;
 import com.bs.hjsyxt.ui.contract.LoginContract;
@@ -39,6 +40,7 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
                     public void onNext(User data) {
                         if (data != null && mView != null) {
                             if(data.result == 0) {
+                                HjsApplication.getsInstance().userid = data.data.id;
                                 mView.onLoginSuccess();
                             } else {
                                 mView.onLoginFaild(data.msg);
@@ -60,6 +62,32 @@ public class LoginPresenter extends RxPresenter<LoginContract.View> implements L
 
     @Override
     public void LoginIUser(String usernmame, String psw) {
-//        httpApi.loginIUser(usernmame, psw);
+    //Rxjava 调用api获取数据并在ui线程装载数据
+        Subscription rxSubscription =  httpApi.loginIUser(usernmame, psw).subscribeOn(Schedulers.io())//获取bookid 从io线程
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<User>() {
+                    @Override
+                    public void onNext(User data) {
+                        if (data != null && mView != null) {
+                            if(data.result == 0) {
+                                HjsApplication.getsInstance().userid = data.data.id;
+                                mView.onLoginSuccess();
+                            } else {
+                                mView.onLoginFaild(data.msg);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.e(TAG, "onError: " + e);
+                    }
+                });
+        addSubscrebe(rxSubscription);
     }
 }

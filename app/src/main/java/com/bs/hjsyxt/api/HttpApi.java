@@ -48,4 +48,8 @@ public class HttpApi {
     public Observable<ProductInfo> getProductDetail(String id) {
         return service.getProductDetail(id);
     }
+
+    public Observable<ProductInfo> putSupplyChain(String id,String chain) {
+        return service.putSupplyChain(id,chain);
+    }
 }

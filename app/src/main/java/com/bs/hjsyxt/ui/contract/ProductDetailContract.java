@@ -16,5 +16,7 @@ public interface ProductDetailContract {
     interface Presenter<T> extends BaseContract.BasePresenter<T>{
 
         void getProductDetail(String id);
+
+        void putSupplychain(String proId);
     }
 }
